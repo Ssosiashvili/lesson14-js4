@@ -1,0 +1,13 @@
+#board {
+    width: 600px;
+    height:  600px;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto auto;
+}
+
+.cell {
+    box-sizing: border-box;
+    border: 1px solid greenyellow;
+}
