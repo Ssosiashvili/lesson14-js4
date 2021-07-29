@@ -40,6 +40,24 @@ function addCounter () {
     for (let i = 0; i < cells.length; i ++) {
         cells[i].addEventListener ('click', function() {
         this.innerHTML = (this.innerHTML * 1) + 1;
+        checkSum();
         });
     }    
+}
+
+//6*. შექმენით ფუნქცია checkSum, რომელიც ყოველი .cell ღილაკზე დაჭერის შემდეგ შეამოწმებს არის თუ არა ყველა 
+//უჯრაში ჩაწერილ ციფრთა ჯამი 25 ის ტოლი და თუ 25 ის ტოლია წაშლის ყველა .cell ელემენტს და გამოიძახებს  
+//addCells ფუნქციას ახლიდან რათა ახლიდან დაგენერირდეს უჯრები.
+
+function checkSum () {
+    let sum = 0;
+    let cells = document.querySelectorAll('.cell');
+    for (let i = 0; i < cells.length; i++ ) {
+        sum += cells[i].innerHTML * 1
+    }
+    if (sum == 25) {
+        document.querySelector('#board').innerHTML = '';
+        addCells(600, 600);
+    }
+    
 }
